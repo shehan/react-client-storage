@@ -31,6 +31,21 @@ function LocalSessionStorage() {
         readButtonHandler()
     }
 
+    const checkButtonHandler = () => {
+        if (localStorage.length === 0)
+            alert('Local Storage Empty')
+        else
+            alert('Local Storage Contains: '+localStorage.length+ ' Items')
+        console.log(localStorage)
+
+        if (sessionStorage.length === 0)
+            alert('Session Storage Empty')
+        else
+            alert('Session Storage Contains: '+sessionStorage.length+ ' Items')
+        console.log(sessionStorage)
+
+    }
+
     return (
         <div>
             <input
@@ -49,6 +64,7 @@ function LocalSessionStorage() {
             <button type="button" onClick={saveButtonHandler}>Save</button>
             <button type="button" onClick={readButtonHandler}>Read</button>
             <button type="button" onClick={clearButtonHandler}>Clear</button>
+            <button type="button" onClick={checkButtonHandler}>Check</button>
         </div>
     );
 }
